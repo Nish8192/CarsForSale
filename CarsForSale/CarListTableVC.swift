@@ -33,6 +33,10 @@ class CarListTableVC: UITableViewController {
         cars.append(car);
         NSKeyedArchiver.archiveRootObject(cars, toFile: filePath);
     }
+    
+    private func saveEdit(){
+        NSKeyedArchiver.archiveRootObject(cars, toFile: filePath);
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -74,6 +78,29 @@ class CarListTableVC: UITableViewController {
 
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showEditAlert(atIndex: indexPath.row)
+    }
+    
+    private func showEditAlert(atIndex: Int){
+    let alert = UIAlertController(title: "Edit Car", message: "Enter new vehicle information", preferredStyle: .alert)
+        alert.addTextField { (textField) in textField.text = self.cars[atIndex].Make }
+        alert.addTextField { (textField) in textField.text = self.cars[atIndex].Model }
+        alert.addTextField { (textField) in textField.text = self.cars[atIndex].Price }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+            self.cars[atIndex].Make = alert.textFields![0].text!;
+            self.cars[atIndex].Model = alert.textFields![1].text!;
+            self.cars[atIndex].Price = alert.textFields![2].text!;
+            self.saveEdit();
+            self.loadData();
+        }))
+        
+            self.present(alert, animated: true, completion: nil)
     }
     
 
