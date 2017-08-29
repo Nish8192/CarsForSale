@@ -23,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        AllCellAppearance.textLabel?.textColor = UIColor.white;
         
-        let AllLabelAppearance = UILabel.appearance();
-        AllLabelAppearance.textColor = UIColor.white;
+//        let AllLabelAppearance = UILabel.appearance();
+//        AllLabelAppearance.textColor = UIColor.blue;
+        
     
         return true
     }

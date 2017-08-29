@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,21 +26,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twQ-cj-CsU">
-                                            <rect key="frame" x="8" y="0.0" width="155" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twQ-cj-CsU">
+                                            <rect key="frame" x="19.999999999999996" y="0.0" width="41.666666666666657" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afa-EV-NMs">
-                                            <rect key="frame" x="252" y="0.0" width="115" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afa-EV-NMs">
+                                            <rect key="frame" x="352.33333333333326" y="0.0" width="41.666666666666686" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="afa-EV-NMs" secondAttribute="bottom" id="15p-UA-MvE"/>
+                                        <constraint firstItem="twQ-cj-CsU" firstAttribute="leading" secondItem="MEA-rE-GUD" secondAttribute="leading" constant="20" id="ISB-Ir-FgB"/>
+                                        <constraint firstAttribute="trailing" secondItem="afa-EV-NMs" secondAttribute="trailing" constant="20" id="MNG-GU-PA6"/>
+                                        <constraint firstItem="twQ-cj-CsU" firstAttribute="top" secondItem="MEA-rE-GUD" secondAttribute="top" id="chP-zg-VIz"/>
+                                        <constraint firstAttribute="bottom" secondItem="twQ-cj-CsU" secondAttribute="bottom" id="evE-l7-sl0"/>
+                                        <constraint firstItem="afa-EV-NMs" firstAttribute="top" secondItem="MEA-rE-GUD" secondAttribute="top" id="y5P-uL-nVE"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="carInfo" destination="twQ-cj-CsU" id="7S4-nB-HAA"/>
@@ -79,31 +86,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-4K-3yr">
-                                <rect key="frame" x="36" y="88" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-4K-3yr">
+                                <rect key="frame" x="35" y="89" width="344" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Z2-1l-HRk"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZvN-CL-ueq">
-                                <rect key="frame" x="36" y="151" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZvN-CL-ueq">
+                                <rect key="frame" x="35" y="144" width="344" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wKV-7S-q4G"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdx-yR-mqE">
-                                <rect key="frame" x="36" y="214" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdx-yR-mqE">
+                                <rect key="frame" x="35" y="199" width="344" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vsk-Ge-t3u"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRU-SG-DAP">
-                                <rect key="frame" x="36" y="282" width="343" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRU-SG-DAP">
+                                <rect key="frame" x="34" y="279" width="344" height="55"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="dMu-Ki-VeC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
                                 <state key="normal" title="Save New Car">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,6 +129,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZvN-CL-ueq" firstAttribute="top" secondItem="EpM-4K-3yr" secondAttribute="bottom" constant="25" id="5e0-Ro-eqh"/>
+                            <constraint firstItem="Mdx-yR-mqE" firstAttribute="leading" secondItem="Mx1-dp-Iwk" secondAttribute="leadingMargin" constant="15" id="83a-oP-yi6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZvN-CL-ueq" secondAttribute="trailing" constant="15" id="Aju-Bt-yu9"/>
+                            <constraint firstItem="GRU-SG-DAP" firstAttribute="top" secondItem="Mdx-yR-mqE" secondAttribute="bottom" constant="50" id="KYL-WX-cgX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRU-SG-DAP" secondAttribute="trailing" constant="15" id="Lks-2s-HpI"/>
+                            <constraint firstItem="Mdx-yR-mqE" firstAttribute="top" secondItem="ZvN-CL-ueq" secondAttribute="bottom" constant="25" id="Lzu-h7-dCk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mdx-yR-mqE" secondAttribute="trailing" constant="15" id="NpC-Zj-CO3"/>
+                            <constraint firstItem="EpM-4K-3yr" firstAttribute="top" secondItem="sOg-Ux-48n" secondAttribute="bottom" constant="25" id="Uob-JI-Y5j"/>
+                            <constraint firstItem="ZvN-CL-ueq" firstAttribute="leading" secondItem="Mx1-dp-Iwk" secondAttribute="leadingMargin" constant="15" id="kVE-1s-5dI"/>
+                            <constraint firstItem="GRU-SG-DAP" firstAttribute="leading" secondItem="Mx1-dp-Iwk" secondAttribute="leadingMargin" constant="15" id="mvU-63-3cQ"/>
+                            <constraint firstItem="EpM-4K-3yr" firstAttribute="leading" secondItem="Mx1-dp-Iwk" secondAttribute="leadingMargin" constant="15" id="olw-iP-xYz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EpM-4K-3yr" secondAttribute="trailing" constant="15" id="vYb-hK-Vtl"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="newCarMake" destination="EpM-4K-3yr" id="zVN-jX-3vD"/>
