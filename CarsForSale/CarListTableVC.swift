@@ -67,6 +67,11 @@ class CarListTableVC: UITableViewController {
 
         cell.carInfo.text = "\(cars[indexPath.row].Make) \(cars[indexPath.row].Model)";
         cell.carPrice.text = "$\(cars[indexPath.row].Price)";
+        
+        cell.layer.backgroundColor = UIColor.purple.cgColor;
+        cell.carPrice.textColor = UIColor.white;
+        cell.carInfo.textColor = UIColor.white;
+
 
         return cell
     }
