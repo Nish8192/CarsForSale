@@ -69,7 +69,7 @@ class CarListTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! CarTableViewCell;
 
         cell.carInfo.text = "\(cars[indexPath.row].Make) \(cars[indexPath.row].Model)";
-        cell.carPrice.text = "$\(cars[indexPath.row].Price)";
+        cell.carPrice.text = cars[indexPath.row].Price;
         
 //        cell.layer.backgroundColor = UIColor.purple.cgColor;
 //        cell.carPrice.textColor = UIColor.white;
@@ -91,6 +91,8 @@ class CarListTableVC: UITableViewController {
         alert.textFields![0].textAlignment = .center;
         alert.textFields![1].textAlignment = .center;
         alert.textFields![2].textAlignment = .center;
+        alert.textFields![2].keyboardType = .numberPad;
+        alert.textFields![2].addTarget(self, action: #selector(editCarPriceDidChange), for: .editingChanged)
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
@@ -104,6 +106,14 @@ class CarListTableVC: UITableViewController {
         
             self.present(alert, animated: true, completion: nil)
     }
+    
+    func editCarPriceDidChange(_ textField: UITextField) {
+        if let amount = textField.text?.currencyInputFormatting() {
+            textField.text = amount;
+        }
+    }
+    
+    
     
 
     /*
