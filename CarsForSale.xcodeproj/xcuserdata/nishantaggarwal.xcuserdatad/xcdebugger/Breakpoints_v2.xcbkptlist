@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarsForSale/CarListTableVC.swift"
-            timestampString = "525733899.512507"
+            timestampString = "525790237.666339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "showEditAlert(atIndex:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -89,6 +89,9 @@ class CarListTableVC: UITableViewController {
         alert.addTextField { (textField) in textField.text = self.cars[atIndex].Make }
         alert.addTextField { (textField) in textField.text = self.cars[atIndex].Model }
         alert.addTextField { (textField) in textField.text = self.cars[atIndex].Price }
+        alert.textFields![0].textAlignment = .center;
+        alert.textFields![1].textAlignment = .center;
+        alert.textFields![2].textAlignment = .center;
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
